@@ -9,14 +9,14 @@ abstract class LoginRemoteDataSource {
 }
 
 class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
-  final LoginService _loginService;
+  final LoginService loginService;
 
-  LoginRemoteDataSourceImpl(this._loginService);
+  LoginRemoteDataSourceImpl({this.loginService});
 
   @override
   Future<AppResult<LoginResponse>> login(
       {@required LoginRequest loginRequest}) async {
-    return await _loginService.login(loginRequest: loginRequest);
+    return await loginService.login(loginRequest: loginRequest);
   }
 
 }
