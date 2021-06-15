@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
 import 'package:login_river_pod/providers.dart';
 import 'package:login_river_pod/widgets/LoginButton.dart';
+import 'package:login_river_pod/injection_container.dart';
 
-void main() {
+Future<void> main() async {
+  await init();
   runApp(
     ProviderScope(
       child: MyApp(),
